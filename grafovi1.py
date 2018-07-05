@@ -10,7 +10,7 @@ class Parovi:
 def zajed_komsije (g,x,y):
     return (len(set(g[x]).union(g[y])))
 
-whole = pd.read_csv ('grafovi/cleaned1.csv')
+whole = pd.read_csv ('grafovi/cleaned.csv')
 
 s_posto = whole [int(len(whole)*0.3):int(len(whole))]
 
@@ -96,9 +96,12 @@ resenje2 = (100*resenje2) / ukupno
 
 print (resenje2)
 
-
-
-
+#for i in za_proveru:
+ #   if i.x in dictionary_provera.keys():
+  #      brojac_unije += 1
+   # else:
+    #    if i.y in dictionary_provera[i.x]:
+     #       brojac_unije +=1
 
 
 #random
