@@ -1,0 +1,26 @@
+import Foundation
+
+print ("Unesite nekakav tekst: ")
+let str = readLine(strippingNewline: true)!
+
+func getDocumentsDirectory() -> URL {
+let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+	return paths [0]
+}
+let filename = getDocumentsDirectory().appendingPathComponent("output.txt")
+print(filename)
+
+do {
+try str.write(to: filename, atomically: true, encoding: String.Encoding.utf8)
+	print("ok")
+	print(filename)
+} catch {
+	print("fail")
+}
+
+do {
+	let sadrzaj = try String(contents0f: filename, encoding: .utf8)
+	print(sadrzaj)
+} catch {
+print("Drugi erer")
+}
