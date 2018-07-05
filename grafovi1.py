@@ -6,7 +6,11 @@ class Parovi:
         self.y = y
         self.br_zajednickih_suseda = br_zajednickih_suseda
 
-whole = pd.read_csv ('grafovi/cleaned.csv')
+
+def zajed_komsije (g,x,y):
+    return (len(set(g[x]).union(g[y])))
+
+whole = pd.read_csv ('grafovi/cleaned1.csv')
 
 s_posto = whole [int(len(whole)*0.3):int(len(whole))]
 
@@ -73,4 +77,39 @@ print (brojac)
 resenje = (brojac *100)/ukupno
 
 print (resenje)
+
+#for i in za_proveru:
+   #if i.x in dictionary_provera.keys():
+        #zajed_komsije()
+
+brojac_unije
+
+for i in za_proveru:
+    if i.x in dictionary_provera.keys():
+        brojac_unije += 1
+    else:
+        if i.y in dictionary_provera[i.x]:
+            brojac_unije +=1
+
+resenje2 = brojac/brojac_unije
+resenje2 = (100*resenje2) / ukupno
+
+print (resenje2)
+
+
+
+
+
+
+#random
+
+v = len(whole)
+s_p = len (s_posto)
+t_p = len (t_posto)
+
+N = (v*(v-1))/2-s_p
+
+rand_vredn =  N/t_p
+
+print (rand)
 
